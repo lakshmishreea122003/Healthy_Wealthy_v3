@@ -27,11 +27,25 @@ date = st.text_input('Dai;y Activity Date (YYYY-MM-DD)')
 
 ac_type = st.text_input('Daily Activity Type')
 
+ac_duration = st.text_input('Daily Activity duration (minutes)')
+
+mood = st.text_input("Daily Activity Mood")
+
+blog_title = st.text_input("Blog Title")
+
+blog_content = st.text_input("Blog content")
+
 if st.button('Submit'):
     data = {
-        "name" :name,
-        "physical_health":physical,
-        "mental_health":mental
+        "name": name,
+        "physical_health": physical,
+        "mental_health": mental,
+        "exercise": exercise,
+        "ac_type" : ac_type,
+        "ac_duration" : ac_duration,
+        "mood": mood,
+        "blog_title" : blog_title,
+        "blog_content" : blog_content
     }
     result = collection.insert_one(data)
 
