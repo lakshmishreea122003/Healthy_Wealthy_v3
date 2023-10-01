@@ -21,6 +21,8 @@ physical = st.text_input('Physical Health(comma seperated)')
 
 mental = st.text_input('Mental Health(comma seperated)')
 
+food = st.text_input('Enter your food preferences here')
+
 exercise = st.text_input('Exercise Preferences')
 
 date = st.text_input('Dai;y Activity Date (YYYY-MM-DD)')
@@ -45,7 +47,8 @@ if st.button('Submit'):
         "ac_duration" : ac_duration,
         "mood": mood,
         "blog_title" : blog_title,
-        "blog_content" : blog_content
+        "blog_content" : blog_content,
+        "food": food
     }
     result = collection.insert_one(data)
 
