@@ -58,18 +58,21 @@ calories_chain = LLMChain(llm=llm, prompt= calories_template,output_key = 'calor
 
 # Show stuff to the screen if there's a prompt
 if prompt: 
-    health = health_chain.run(prompt,result.preference,result.physical_health)
+    health = health_chain.run(prompt,result.get("food"),result.get("physical_health"))
     recipes = recipes_chain.run(health)
     calories = calories_chain.run(recipes)
     
     st.markdown("<p style='color: #4FC978; font-style: italic; font-family: Comic Sans MS; ' >Health Perspective</p>", unsafe_allow_html=True)
-    st.write(health)
+    st.write(health[0]["generated_text"]
+)
 
     st.markdown("<p style='color: #4FC978; font-style: italic; font-family: Comic Sans MS; ' >Health Recipies for you</p>", unsafe_allow_html=True)
-    st.write(recipes)
+    st.write(recipes[0]["generated_text"]
+)
 
     st.markdown("<p style='color: #4FC978; font-style: italic; font-family: Comic Sans MS; ' >Calories of the above recipy</p>", unsafe_allow_html=True)
-    st.write(calories)
+    st.write(calories[0]["generated_text"]
+)
 
 
  
