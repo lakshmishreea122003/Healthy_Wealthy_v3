@@ -5,6 +5,7 @@ Unlock Your Healthy Wealth with MongoDB Atlas, AI, LLM, and CV: Your Personalize
 ## How to try out this project
 - git clone the repo
 - open the project in the IDE
+- in the files that fetch data from the MongoDB Atlas make the required changes in the line 'mongo_uri = "mongodb+srv://<username>:<password>@<cluster_url>/<database_name>?retryWrites=true&w=majority" '
 - in the terminal type 'streamlit run <path to the Home.py file>'
 
 ## Inspiration
