@@ -40,7 +40,7 @@ mood_template = PromptTemplate(
 mood_chain = LLMChain(llm=llm, prompt=mood_template, output_key='mood')
 
 if name is not "":
-    res = mood_chain.run(result.mood)
+    res = mood_chain.run(result.get("mood"))
     st.write(res)
     
 ##########################
